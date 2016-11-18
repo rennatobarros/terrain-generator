@@ -1,9 +1,7 @@
-#include <stdio.h>
-#include <string.h>
+#include "libs/functions.c"
 
 int main(int argc, char *argv[])
 {
-    int i;
     //char *parametros[] = {"-d", "-o", "-s"};
     
     for(i = 0; i < argc; i++) {
