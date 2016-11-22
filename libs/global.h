@@ -25,3 +25,7 @@ int i, j;
 typedef struct {
     int r, g, b;
 } pixel;
+
+typedef struct {
+    int linha, coluna;
+} ponto;
