@@ -4,7 +4,9 @@ int main(int argc, char *argv[])
 {
     //char *parametros[] = {"-d", "-o", "-s"};
     
-    if(argc == 1){
+    pixel matriz[MAX][MAX];
+    
+    /* if(argc == 1){
         printf("Arquivo sem paramentros!!\n");
     }else if(argc > 1){
         if(argc % 2 != 0){
@@ -15,9 +17,7 @@ int main(int argc, char *argv[])
                 printf("Argumentos faltando!\n");
                 exit(0);
          }
-    }
-    
-
+    } */
             
     
     return 0;
