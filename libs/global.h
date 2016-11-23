@@ -4,6 +4,9 @@
 #include <time.h>
 #include <math.h>
 
+/** Define o tamanho máximo que a imagem pode ter*/
+#define MAX 512
+
 /** Define o cabeçalho do arquivo. */
 #define header "P3"
 
@@ -14,7 +17,7 @@ FILE *foto;
 char code[3];
 
 /** Largura e altura, respectivamente, da imagem em pixels. */
-int linha, coluna;
+int height, width;
 
 /** Iteradores padrão */
 int i, j;
