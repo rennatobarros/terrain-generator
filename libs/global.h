@@ -1,3 +1,6 @@
+#ifndef __GLOBAL_H
+#define __GLOBAL_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -32,3 +35,5 @@ typedef struct {
 typedef struct {
     int linha, coluna;
 } ponto;
+
+#endif
