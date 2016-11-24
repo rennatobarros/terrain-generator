@@ -27,3 +27,8 @@ void gen_linhacontorno(pixel matriz[MAX+1][MAX+1], ponto inicial, ponto final, p
         }
     }
 }
+
+void gen_imagem(pixel matriz[MAX+1][MAX+1], ponto vetorLinha[MAX+1])
+{
+    
+}
