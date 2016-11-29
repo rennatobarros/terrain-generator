@@ -8,7 +8,7 @@
 #include <math.h>
 
 /** Define o tamanho máximo que a imagem pode ter*/
-#define MAX 512
+#define MAX 513
 
 /** Define o cabeçalho do arquivo. */
 #define header "P3"
@@ -24,6 +24,9 @@ int height, width;
 
 /** Iteradores padrão */
 int i, j;
+
+/** Valor máximo que um pixel pode atingir*/
+int v_max;
 
 /** 
  * Struct que armazena as cores (em RGB) de cada pixel
