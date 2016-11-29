@@ -5,5 +5,7 @@
 
 int num_rand (int);
 void gen_linhacontorno(pixel matriz[MAX][MAX], ponto inicial, ponto final, ponto vetorLinha[MAX+1], int);
+void salvar_img(pixel matriz[MAX][MAX]);
+void gen_terrain(pixel matriz[MAX][MAX], ponto vetorLinha[MAX]);
 
 #endif
