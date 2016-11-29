@@ -3,8 +3,29 @@
 int main(int argc, char *argv[])
 {
     //char *parametros[] = {"-d", "-o", "-s"};
-    
-    pixel matriz[MAX][MAX];
+    srand ((unsigned)time(NULL));
+
+    //pixel matriz[MAX][MAX];
+    int size  = 12;
+
+    int altitudes[size];
+    for(i = 0; i < size; i++)
+        altitudes[i] = 0;
+
+    for(i = 0; i < size; i++)
+        printf("%d ", altitudes[i]);
+    printf("\n");
+
+    gen_linhacontorno(size, size, altitudes);
+
+    for(i = 0; i < size; i++)
+        printf("%d ", altitudes[i]);
+    printf("\n");
+
+
+
+
+    //salvar_img(matriz);
     
     /* if(argc == 1){
         printf("Arquivo sem paramentros!!\n");

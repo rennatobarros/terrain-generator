@@ -3,32 +3,35 @@
 
 int num_rand (int max) 
 {
-    return rand() % max;
+    return max > 0 ? (rand() % (2*max+1) - max) : 0;
 }
 
-void gen_linhacontorno(pixel matriz[MAX][MAX], ponto inicial, ponto final, ponto vetorLinha[MAX], int range)
+void midPoint(int size, int fator_d, int altitudes[size], int inicial, int final)
 {
-    if(inicial.coluna < final.coluna && range != 0){
-        
-        ponto medio;
-        
-        medio.linha     = (inicial.linha + final.coluna)/2;
-        medio.coluna    = (inicial.coluna + final.coluna)/2;
-        
-        int num         = num_rand(range);
-        medio.linha     += (num-range/2);
-        
-        vetorLinha[medio.linha].linha   = medio.linha;
-        vetorLinha[medio.coluna].coluna = medio.coluna;
-        
-        if(medio.coluna != final.coluna && medio.coluna != inicial.coluna){
-            gen_linhacontorno(matriz, inicial, medio, vetorLinha, range/2);
-            gen_linhacontorno(matriz, medio, final, vetorLinha, range/2);
+    if(inicial >= 0 && final < size){
+        int num = num_rand(fator_d);
+        int midpoint = (inicial + final)/2;
+        altitudes[midpoint] = (altitudes[inicial] + altitudes[final])/2;
+        altitudes[midpoint] += num;
+
+        if(midpoint != inicial && midpoint != final){
+            midPoint(size, fator_d/2, altitudes, inicial, midpoint);
+            midPoint(size, fator_d/2, altitudes, midpoint, final);
         }
     }
+    
+
 }
 
-void gen_terrain(pixel matriz[MAX][MAX], ponto vetorLinha[MAX])
+void gen_linhacontorno(int size, int fator_d, int altitudes[size])
+{
+    altitudes[0] = num_rand(fator_d/2) + fator_d/2;
+    altitudes[size-1] = num_rand(fator_d/2) + fator_d/2;
+
+    midPoint(size, fator_d, altitudes, 0, size-1);
+}
+
+/*void gen_terrain(pixel matriz[MAX][MAX], ponto vetorLinha[MAX])
 {
     int l = 0;
 
@@ -38,18 +41,18 @@ void gen_terrain(pixel matriz[MAX][MAX], ponto vetorLinha[MAX])
             l++;
         }
     }
-}
+}*/
 
 void salvar_img(pixel matriz[MAX][MAX])
 {
     
-    //char nome_arq_salvar[50];
+    char nome_arq_salvar[] = "teste.ppm";
     //scanf("%s", nome_arq_salvar);
 
     foto = fopen(nome_arq_salvar, "w");
 
     fprintf (foto, "%s\n", header);
-    fprintf (foto, "%d %d\n", height, width);
+    fprintf (foto, "%d %d\n", 512, 512);
     fprintf (foto, "%d\n", v_max);
 
     for (i=0; i < height; i++)
@@ -59,5 +62,5 @@ void salvar_img(pixel matriz[MAX][MAX])
             (matriz[i][j].r > v_max) ? v_max : (matriz[i][j].r < 0) ? 0 : matriz[i][j].r,
             (matriz[i][j].g > v_max) ? v_max : (matriz[i][j].g < 0) ? 0 : matriz[i][j].g,
             (matriz[i][j].b > v_max) ? v_max : (matriz[i][j].b < 0) ? 0 : matriz[i][j].b);
-    fclose(fotoN);
+    fclose(foto);
 }
