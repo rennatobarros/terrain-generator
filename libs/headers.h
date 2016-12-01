@@ -4,8 +4,8 @@
 #include "global.h"
 
 int num_rand (int);
-void gen_linhacontorno(int size, int fator_d, int altitudes[size]);
+void gen_linhacontorno(int size, int limit, int altitudes[size]);
 void salvar_img(pixel matriz[MAX][MAX]);
-//void gen_terrain(pixel matriz[MAX][MAX], ponto vetorLinha[MAX]);
+void gen_terrain(pixel matriz[MAX][MAX], int altitudes[size]);
 
 #endif

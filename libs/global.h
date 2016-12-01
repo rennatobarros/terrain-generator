@@ -26,7 +26,7 @@ int height, width;
 int i, j;
 
 /** Valor máximo que um pixel pode atingir*/
-int v_max;
+int v_max = 255;
 
 /** 
  * Struct que armazena as cores (em RGB) de cada pixel
@@ -34,5 +34,7 @@ int v_max;
 typedef struct {
     int r, g, b;
 } pixel;
+
+int size  = 513;
 
 #endif
