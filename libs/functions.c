@@ -3,20 +3,25 @@
 
 int num_rand (int max) 
 {
-    return max > 0 ? (rand() % (2*max+1) - max) : 0;
+    return rand()%max;
 }
 
 void midPoint(int size, int fator_d, int altitudes[size], int inicial, int final)
 {
+    int n = fator_d/2;
+    // Evita erro de segmentação
+    if(n == 0) 
+        n = 1;
+
     if(inicial >= 0 && final < size){
-        int num = num_rand(fator_d);
+        int num = num_rand(n);
         int midpoint = (inicial + final)/2;
         altitudes[midpoint] = (altitudes[inicial] + altitudes[final])/2;
         altitudes[midpoint] += num;
 
         if(midpoint != inicial && midpoint != final){
-            midPoint(size, fator_d/2, altitudes, inicial, midpoint);
-            midPoint(size, fator_d/2, altitudes, midpoint, final);
+            midPoint(size, n, altitudes, inicial, midpoint);
+            midPoint(size, n, altitudes, midpoint, final);
         }
     }
     
@@ -25,10 +30,12 @@ void midPoint(int size, int fator_d, int altitudes[size], int inicial, int final
 
 void gen_linhacontorno(int size, int fator_d, int altitudes[size])
 {
-    altitudes[0] = num_rand(fator_d/2) + fator_d/2;
-    altitudes[size-1] = num_rand(fator_d/2) + fator_d/2;
+    int n = fator_d/2;
+    
+    altitudes[0] = num_rand(n) + n;
+    altitudes[size-1] = num_rand(n) + n;
 
-    midPoint(size, fator_d, altitudes, 0, size-1);
+    midPoint(size, n, altitudes, 0, size-1);
 }
 
 /*void gen_terrain(pixel matriz[MAX][MAX], ponto vetorLinha[MAX])
