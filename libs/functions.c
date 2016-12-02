@@ -64,13 +64,9 @@ void gen_terrain(pixel matriz[MAX][MAX], int altitudes[size])
 	}
 }
 
-void salvar_img(pixel matriz[MAX][MAX])
+void salvar_img(pixel matriz[MAX][MAX], char file[])
 {
-    
-    char nome_arq_salvar[] = "teste.ppm";
-    //scanf("%s", nome_arq_salvar);
-
-    foto = fopen(nome_arq_salvar, "w");
+    foto = fopen(strcat(file,".ppm"), "w");
 
     fprintf (foto, "%s\n", header);
     fprintf (foto, "%d %d\n", 512, 512);
