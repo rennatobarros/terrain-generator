@@ -7,17 +7,11 @@
 #include <time.h>
 #include <math.h>
 
-/** Define o tamanho máximo que a imagem pode ter*/
-#define MAX 513
-
 /** Define o cabeçalho do arquivo. */
 #define header "P3"
 
 /** Armazena a imagem lida. */
 FILE *foto;
-
-/** Vetor que armazena o código da imagem .ppm. */
-char code[3];
 
 /** Largura e altura, respectivamente, da imagem em pixels. */
 int height, width;
@@ -34,7 +28,5 @@ int v_max = 255;
 typedef struct {
     int r, g, b;
 } pixel;
-
-int size  = 513;
 
 #endif
