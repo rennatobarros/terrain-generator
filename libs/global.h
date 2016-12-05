@@ -1,26 +1,26 @@
 #ifndef __GLOBAL_H
 #define __GLOBAL_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
-#include <math.h>
-
 /** Define o cabeçalho do arquivo. */
 #define header "P3"
 
 /** Armazena a imagem lida. */
 FILE *foto;
 
-/** Largura e altura, respectivamente, da imagem em pixels. */
-int height, width;
+/** Valor dos limites da linha de contorno. */
+int size;
+
+/** Nome do arquivo a ser salvo. */
+char file_name[50];
+
+/** Define o tamanho máximo que a imagem pode ter. */
+int MAX;
 
 /** Iteradores padrão */
 int i, j;
 
 /** Valor máximo que um pixel pode atingir*/
-int v_max = 255;
+int v_max;
 
 /** 
  * Struct que armazena as cores (em RGB) de cada pixel
