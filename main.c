@@ -1,3 +1,13 @@
+/** 
+ * \mainpage Gerador de Terrenos
+ * \author Renato Barros de Lima Freitas
+ * \date 08/12/2016
+ * \version 1.0
+ *
+ * \file main.c
+ * \brief Arquivo principal do programa
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -7,6 +17,12 @@
 
 int main(int argc, char *argv[])
 {
+    /**
+     * \brief Função que executa a principal parte do programa
+     * @param argc Inteiro que guarda a quantidade de argumentos passados
+     * @param argv Vetor que guarda as strings passadas por linha de comando
+     * \return 0
+    */
     srand ((unsigned)time(NULL));
     
     // Armazena o nome do arquivo a ser lido
@@ -16,10 +32,10 @@ int main(int argc, char *argv[])
     for(i = 0; i < argc; i++){
         if(argc == 1){
             //Valores default
-            size = 128, strcpy(arq, "terrain"), MAX = 513;
+            size = 129, strcpy(arq, "terrain"), MAX = 513;
         // Verifica se tem argumentos seguido de parâmetros
-        }else if(argc > 1 && argc % 2 == 1){
-            // Verifica se a opção digitada confere com a já estabelicida e atribui o argumento passado a corresponde variável
+        }else if(argc > 1 && argc % 2 != 0){
+            // Verifica se a opção digitada confere com a já estabelicida e atribui o argumento passado a variável correspondente
             if(strcmp("-d",argv[i + 1]) == 0){
                 size = atoi(argv[i + 1]);
             }else if(strcmp("-o",argv[i + 1]) == 0){
