@@ -5,10 +5,10 @@
 #define header "P3"
 
 /** Armazena a imagem lida. */
-FILE *foto;
+FILE *imagem;
 
 /** Valor dos limites da linha de contorno. */
-int size;
+int deslocamento;
 
 /** Nome do arquivo a ser salvo. */
 char file_name[50];
@@ -28,5 +28,13 @@ int v_max;
 typedef struct {
     int r, g, b;
 } pixel;
+
+/** 
+ * Enum que armazena os possveis periodos a ser gerado no terreno
+ */
+typedef enum {
+    MANHA,
+    NOITE;
+} periodo;
 
 #endif
