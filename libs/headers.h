@@ -4,10 +4,10 @@
 #include "global.h"
 
 int 	num_rand 			(int);
-void 	init_prog			(int MAX, int size, char arq[]);
-void 	gen_linhacontorno	(int size, int limit, int altitudes[MAX]);
+void 	init_prog			(int MAX, int deslocamento, char arq[], int p_dia);
+void 	gen_linhacontorno	(int MAX, int deslocamento, int tipo, int montanha[MAX], pixel matriz[MAX][MAX]);
+void    midPoint            (int MAX, int montanha[MAX], pixel matriz[MAX][MAX], int tipo, int deslocamento, int inicial, int final);
 void 	salvar_img			(int MAX, pixel matriz[MAX][MAX], char file[]);
-void 	gen_terrain			(pixel matriz[MAX][MAX], int altitudes[MAX]);
 
 
 #endif

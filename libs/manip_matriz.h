@@ -1,64 +1,77 @@
-void gen_terrain(pixel matriz[MAX][MAX], int altitudes[MAX])
+void midPoint(int MAX, int montanha[MAX], pixel matriz[MAX][MAX], int tipo, int deslocamento, int inicial, int final)
 {
-    
-    
-    // Variável auxiliar para receber os valores das altitudes
-    int aux;
-    
-    for (j=0; j < MAX; j++){
-		aux = altitudes[j];
-		for (i=aux; i < MAX; i++){
-			matriz[i][j].r = 120, // Seta a cor marrom para indicar uma montanha.
-            matriz[i][j].g = 80,
-            matriz[i][j].b = 20;
-			
-		}
-	}
-}
-
-void midPoint(int size, int altitudes[MAX], int limit, int inicial, int final)
-{
-    
-    if(inicial >= 0 && final < size){
+    if((final - inicial) > 1){
         // Variável para definir a aleatoriedade das alturas
-        int displacement;
-
+        int fator_d;   
         // Evita erros de divisão por zero
-        if(limit >= 2){
-            displacement = num_rand(limit);
+        if(deslocamento > 1){
+            // Gera valor aleatório entre deslocamento e -deslocamento
+            fator_d = (num_rand(2*deslocamento)) - deslocamento;
         }else{
-            displacement = 0;
+            fator_d = 0;
         }
+    
+        // Calcula o indice do ponto médio 
+        int midpoint = (final+inicial)/2;
+    
+        int temp = ((montanha[inicial] + montanha[final])/2 + fator_d);
+        
+        // Evita erros de segmentação
+        if(temp > MAX-1)
+            montanha[midpoint] = MAX-1;
+        else if(temp < 0)
+           montanha[midpoint] = 0;
+        else
+            montanha[midpoint] = temp;
 
-        // Cria o ponto médio 
-        int midpoint = (final-inicial)/2;
-
-        if(midpoint > 0){
-            int temp = ((altitudes[inicial] + altitudes[final])/2 + displacement);
-                
-            altitudes[inicial+midpoint] = temp;
-
-            // Evita erros de segmentação
-            if(temp > size-1)
-                altitudes[inicial+midpoint] = size-1;
-            else if(temp < 0)
-               altitudes[inicial+midpoint] = 0;
+        if(tipo == 1){
+            for(i = montanha[midpoint]; i < MAX ; i++){
+                matriz[i][midpoint].r = 25;
+                matriz[i][midpoint].g = 29;
+                matriz[i][midpoint].b = 76;
+            }
+        }else if(tipo == 2){
+            for(i = montanha[midpoint]; i < MAX ; i++){
+                matriz[i][midpoint].r = 17;
+                matriz[i][midpoint].g = 20;
+                matriz[i][midpoint].b = 40;
+            }
+        }else if(tipo == 3){
+            for(i = montanha[midpoint]; i < MAX ; i++){
+                matriz[i][midpoint].r = 10;
+                matriz[i][midpoint].g = 10;
+                matriz[i][midpoint].b = 5;
+            }
+        }
             
         
-            // Preenche recusivamente do inicio até o ponto médio
-            midPoint(size, altitudes, limit/2, inicial, midpoint+inicial);
-            // Preenche recusivamente do ponto médio até o final
-            midPoint(size, altitudes, limit/2, midpoint+inicial, final);
-        }
+        // Preenche recusivamente do inicio até o ponto médio
+        midPoint(MAX, montanha, matriz, tipo, deslocamento/2, inicial, midpoint);
+        // Preenche recusivamente do ponto médio até o final
+        midPoint(MAX, montanha, matriz, tipo, deslocamento/2, midpoint, final);
     }
+    
 }
 
-void gen_linhacontorno(int size, int limit, int altitudes[MAX])
+void gen_linhacontorno(int MAX, int deslocamento, int tipo, int montanha[MAX], pixel matriz[MAX][MAX])
 {
-    // Setando aleatoriamente os pontos inicial e final, respectivamente.
-    altitudes[0]        = num_rand(size);
-    altitudes[size-1]   = num_rand(size);
-
-    // Chama a função para gerar os pontos médios.
-    midPoint(size, altitudes, limit, 0, size-1);
+    if(tipo == 1){
+        // Setando aleatoriamente os pontos inicial e final, respectivamente.
+        montanha[0]       = num_rand(MAX);
+        montanha[MAX-1]   = num_rand(MAX);
+        // Chama a função para gerar os pontos médios.
+        midPoint(MAX, montanha, matriz, tipo, deslocamento, 0, MAX-1);
+    }else if(tipo == 2){
+        // Setando aleatoriamente os pontos inicial e final, respectivamente.
+        montanha[0]       = num_rand(MAX);
+        montanha[MAX-1]   = num_rand(MAX);
+        // Chama a função para gerar os pontos médios.
+        midPoint(MAX, montanha, matriz, tipo, deslocamento, 0, MAX-1);
+    }else if(tipo == 3){
+        // Setando aleatoriamente os pontos inicial e final, respectivamente.
+        montanha[0]       = num_rand(MAX);
+        montanha[MAX-1]   = num_rand(MAX);
+        // Chama a função para gerar os pontos médios.
+        midPoint(MAX, montanha, matriz, tipo, deslocamento, 0, MAX-1);
+    }     
 }

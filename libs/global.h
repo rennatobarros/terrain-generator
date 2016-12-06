@@ -33,8 +33,8 @@ typedef struct {
  * Enum que armazena os possveis periodos a ser gerado no terreno
  */
 typedef enum {
-    MANHA,
-    NOITE;
+    NOITE,
+    MANHA
 } periodo;
 
 #endif
