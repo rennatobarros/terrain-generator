@@ -27,30 +27,43 @@ int main(int argc, char *argv[])
     
     // Armazena o nome do arquivo a ser lido
     char arq[50];
+    
+    // Valor da dimensão da matriz
+    int MAX = 513;
 
     // Loop para capturar e fazer a verificação dos paramêtros passados
-    for(i = 0; i < argc; i++){
-        if(argc == 1){
-            //Valores default
-            size = 129, strcpy(arq, "terrain"), MAX = 513;
-        // Verifica se tem argumentos seguido de parâmetros
-        }else if(argc > 1 && argc % 2 != 0){
-            // Verifica se a opção digitada confere com a já estabelicida e atribui o argumento passado a variável correspondente
-            if(strcmp("-d",argv[i + 1]) == 0){
-                size = atoi(argv[i + 1]);
-            }else if(strcmp("-o",argv[i + 1]) == 0){
-                strcpy(arq, argv[i + 1]);
-            }else if(strcmp("-s",argv[i + 1]) == 0){
-                MAX = atoi(argv[i + 1]);
+    if(argc == 1){
+        //Valores default
+        deslocamento = 128, strcpy(arq, "terrain");
+    // Verifica se tem argumentos seguido de parâmetros
+    }else if(argc > 1 && argc % 2 != 0){
+        // Verifica se a opção digitada confere com a já estabelicida e atribui o argumento passado a variável correspondente
+        if(argc == 3){
+            if(strcmp("-d",argv[1]) == 0){
+                deslocamento = atoi(argv[2]);
+            }else if(strcmp("-o",argv[1]) == 0){
+                strcpy(arq, argv[2]);
+            }else{
+                printf("Erro!");
             }
-        }else{
-            printf("Argumentos faltando!\n");
-            exit(0);
+        }else if(argc == 5){
+            if(strcmp("-d",argv[1]) == 0){
+                deslocamento = atoi(argv[2]);
+            }else if(strcmp("-o",argv[1]) == 0){
+                strcpy(arq, argv[2]);
+            }else if(strcmp("-d",argv[3]) == 0){
+                strcpy(arq, argv[4]);
+            }else if(strcmp("-o",argv[3]) == 0){
+                strcpy(arq, argv[4]);
+            }
         }
+    }else{
+        printf("Argumentos faltando!\n");
+        exit(0);
     }
 
     // Inicia o processamento da imagem
-    init_prog(MAX, size, arq);
+    init_prog(MAX, deslocamento, arq);
     
     // Mensagem de término do programa
     printf("Programa Finalizado!!\n");
