@@ -1,19 +1,42 @@
-#include "global.h"
-#include "headers.h"
-#include "manip_matriz.h"
+/**
+ *  \file functions.h
+ *  \brief Arquivo com as funções essenciais do programa.
+ *
+ */
 
+#include "global.h"         /** Variáveis globais. */
+#include "headers.h"        /** Inicialização das funções. */
+#include "manip_matriz.h"   /** Principais funções para gerar o terreno. */
+
+/** 
+ * Função que gera um número entre 0 e max
+ *
+ * \brief Função para gerar número aleatório
+ * @param max Valor máximo que o número aleatório poderá atingir 
+ * \return númeo aleatorio
+*/
 int num_rand (int max) 
 {
     return rand()%max;
 }
 
-void salvar_img(int MAX, pixel matriz[MAX][MAX], char file[])
+/** 
+ * Função que salva a matriz de pixels em um arquivo .ppm
+ *
+ * \brief Função para salvar a matriz de pixels em um arquivo
+ * @param MAX Valor máximo da linha e coluna da matriz
+ * @param matriz Matriz a ser salva no arquivo
+ * @param arq Nome que será dado ao arquivo 
+ * \return Nada
+*/
+
+void salvar_img(int MAX, pixel matriz[MAX][MAX], char arq[])
 {
     // Define que cada pixel só poderá ir até 255
     v_max = 255;
 
     // Concatena o nome do arquivo com a extensão ppm
-    imagem = fopen(strcat(file,".ppm"), "w");
+    imagem = fopen(strcat(arq,".ppm"), "w");
 
     // Define o cabeçalho da imagem 
     fprintf (imagem, "%s\n", header);
@@ -32,37 +55,36 @@ void salvar_img(int MAX, pixel matriz[MAX][MAX], char file[])
     fclose(imagem);
 }
 
+/** 
+ * Função para inicializar as matrizes e vetores do programa
+ *
+ * \brief Função que inicializa o programa
+ * @param MAX Valor máximo da linha e coluna da matriz
+ * @param deslocamento valor da variação da montanha
+ * @param arq Nome que será dado ao arquivo 
+ * @param p_dia Período do dia a imagem será gerada 
+ * \return Nada
+*/
+
 void init_prog(int MAX, int deslocamento, char arq[], int p_dia)
 {
-    strcpy(file_name, arq);
 
     // Inicia a matriz de pixels
     pixel matriz[MAX][MAX];
-    // Inicia a matriz de altitudes do terreno
+
+    // Inicia as três montanhas que aparecerão no terreno
     int montanha[MAX];
     int montanha2[MAX];
     int montanha3[MAX];
     
-    // Inicia a matriz de pixels com cores diurnas ou noturnas
-    if(p_dia == NOITE){
-        for (i=0; i < MAX; i++)
-		    for (j=0; j < MAX; j++)
-			    matriz[i][j].r = 17, // Seta uma cor 'noturna' para todo o terreno
-                matriz[i][j].g = 14,
-                matriz[i][j].b = 25;
-    }else{
-        for (i=0; i < MAX; i++)
-		    for (j=0; j < MAX; j++)
-			    matriz[i][j].r = 214, // Seta uma cor 'diurna' para todo o terreno
-                matriz[i][j].g = 238,
-                matriz[i][j].b = 248;
-    }
+    init_matriz(MAX, matriz, p_dia);
 
 
     // Chama a função que gera a linha de contorno
-    gen_linhacontorno(MAX, deslocamento, 1, montanha, matriz);
-    gen_linhacontorno(MAX, deslocamento, 2, montanha2, matriz);
-    gen_linhacontorno(MAX, deslocamento, 3, montanha3, matriz);
+    gen_linhacontorno(MAX, deslocamento, 1, p_dia, montanha, matriz);
+    gen_linhacontorno(MAX, deslocamento, 2, p_dia, montanha2, matriz);
+    gen_linhacontorno(MAX, deslocamento, 3, p_dia, montanha3, matriz);
+    
     // Salva a imagem em um arquivo
     salvar_img(MAX, matriz, arq);
 }

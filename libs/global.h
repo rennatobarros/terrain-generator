@@ -1,3 +1,11 @@
+/** 
+ * \file global.h
+ * \brief Arquivo com variáveis globais
+ *
+ * Arquivo com cabeçalhos e estruturas necessárias em todo o programa.
+ *
+ */
+
 #ifndef __GLOBAL_H
 #define __GLOBAL_H
 
@@ -19,7 +27,7 @@ int MAX;
 /** Iteradores padrão */
 int i, j;
 
-/** Valor máximo que um pixel pode atingir*/
+/** Valor máximo que um pixel pode atingir. */
 int v_max;
 
 /** 
