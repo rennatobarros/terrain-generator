@@ -100,7 +100,6 @@ int main(int argc, char *argv[])
     init_prog(MAX, deslocamento, arq, p_dia);
     
     // Mensagem de término do programa
-    //printf("%d!!\n", p_dia);
     printf("Programa Finalizado!!\n");
     
     return 0;
