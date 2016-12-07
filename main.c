@@ -25,79 +25,109 @@ int main(int argc, char *argv[])
 {
     // Semente para números aleeatórios
     srand ((unsigned)time(NULL));
-    
-    // Armazena o nome do arquivo a ser lido
-    char arq[50];
-    
-    // Valor da dimensão da matriz
-    int MAX = 513;
 
+    MAX = 513;
     // Periodo do dia que a imagem será gerada.
     periodo p_dia;
 
+    p_dia = MANHA, deslocamento = 128, strcpy(file_name, "terrain");
+
     // Loop para capturar e fazer a verificação dos paramêtros passados
-    if(argc == 1){
-        //Valores default
-        p_dia = NOITE, deslocamento = 128, strcpy(arq, "terrain");
-    // Verifica se tem argumentos seguido de parâmetros
-    }else if(argc > 1 && argc % 2 != 0){
-        // Verifica se a opção digitada confere com a já estabelicida e atribui o argumento passado a variável correspondente
-        if(argc == 3){
-            if(strcmp("-d",argv[1]) == 0){
-                deslocamento = atoi(argv[2]);
-            }else if(strcmp("-o",argv[1]) == 0){
-                strcpy(arq, argv[2]);
-            }else if(strcmp("-p",argv[1]) == 0){
-                p_dia = atoi(argv[2]);
-            }else{
-                printf("Erro!");
+    for(i = 1; i < argc; i++){
+        if(argc > 1 && argc % 2 != 0){
+            // Verifica se a opção digitada confere com a já estabelicida e atribui o argumento passado a variável correspondente
+            // Verifica se foi passado somente um parametro
+            if(argc == 3){
+                if(strcmp("-d",argv[i]) == 0){
+                    if(strcmp("-d",argv[i + 1]) != 0){
+                        deslocamento = atoi(argv[i + 1]);
+                    }
+                }else if(strcmp("-o",argv[i]) == 0){
+                    if(strcmp("-o",argv[i + 1]) != 0){
+                        strcpy(file_name, argv[i + 1]);
+                    }
+                }else if(strcmp("-p",argv[i]) == 0){
+                    if(strcmp("-p",argv[i + 1]) != 0){
+                        p_dia = atoi(argv[i + 1]) == 0 ? NOITE : MANHA;
+                    }
+                }
+            // Verifica se foram passados 2 parametros
+            }else if(argc == 5){
+                if(strcmp("-d",argv[i]) == 0){
+                    if(strcmp("-d",argv[i + 1]) != 0){
+                        deslocamento = atoi(argv[i + 1]);
+                    }
+                }else if(strcmp("-o",argv[i]) == 0){
+                    if(strcmp("-o",argv[i + 1]) != 0){
+                        strcpy(file_name, argv[i + 1]);
+                    }
+                }else if(strcmp("-p",argv[i]) == 0){
+                   if(strcmp("-p",argv[i + 1]) != 0){
+                        p_dia = atoi(argv[i + 1]) == 0 ? NOITE : MANHA;
+                    }
+                }else if(strcmp("-d",argv[i + 2]) == 0){
+                    if(strcmp("-d",argv[i + 3]) != 0){
+                        deslocamento = atoi(argv[i + 3]);
+                    }
+                }else if(strcmp("-o",argv[i + 2]) == 0){
+                    if(strcmp("-o",argv[i + 3]) != 0){
+                        strcpy(file_name, argv[i + 3]);
+                    }
+                }else if(strcmp("-p",argv[i + 2]) == 0){
+                   if(strcmp("-p",argv[i + 3]) != 0){
+                        p_dia = atoi(argv[i + 3]) == 0 ? NOITE : MANHA;
+                    }
+                }
+            // Verifica se todos os parametros foram passados
+            }else if(argc == 7){
+                if(strcmp("-d",argv[i]) == 0){
+                    if(strcmp("-d",argv[i + 1]) != 0){
+                        deslocamento = atoi(argv[i + 1]);
+                    }
+                }else if(strcmp("-o",argv[i]) == 0){
+                    if(strcmp("-o",argv[i + 1]) != 0){
+                        strcpy(file_name, argv[i + 1]);
+                    }
+                }else if(strcmp("-p",argv[i]) == 0){
+                   if(strcmp("-p",argv[i + 1]) != 0){
+                        p_dia = atoi(argv[i + 1]) == 0 ? NOITE : MANHA;
+                    }
+                }else if(strcmp("-d",argv[i + 2]) == 0){
+                    if(strcmp("-d",argv[i + 3]) != 0){
+                        deslocamento = atoi(argv[i + 3]);
+                    }
+                }else if(strcmp("-o",argv[i + 2]) == 0){
+                    if(strcmp("-o",argv[i + 3]) != 0){
+                        strcpy(file_name, argv[i + 3]);
+                    }
+                }else if(strcmp("-p",argv[i + 2]) == 0){
+                   if(strcmp("-p",argv[i + 3]) != 0){
+                        p_dia = atoi(argv[i + 3]) == 0 ? NOITE : MANHA;
+                    }
+                }else if(strcmp("-d",argv[i + 4]) == 0){
+                    if(strcmp("-d",argv[i + 5]) != 0){
+                        deslocamento = atoi(argv[i + 5]);
+                    }
+                }else if(strcmp("-o",argv[i + 4]) == 0){
+                    if(strcmp("-o",argv[i + 5]) != 0){
+                        strcpy(file_name, argv[i + 5]);
+                    }
+                }else if(strcmp("-p",argv[i + 4]) == 0){
+                    if(strcmp("-p",argv[i + 5]) != 0){
+                        p_dia = atoi(argv[i + 5]) == 0 ? NOITE : MANHA;
+                    }
+                }
             }
-        }else if(argc == 5){
-            if(strcmp("-d",argv[1]) == 0){
-                deslocamento = atoi(argv[2]);
-            }else if(strcmp("-o",argv[1]) == 0){
-                strcpy(arq, argv[2]);
-            }else if(strcmp("-p",argv[1]) == 0){
-                p_dia = atoi(argv[2]);
-            }else if(strcmp("-d",argv[3]) == 0){
-                deslocamento = atoi(argv[4]);
-            }else if(strcmp("-o",argv[3]) == 0){
-                strcpy(arq, argv[4]);
-            }else if(strcmp("-p",argv[3]) == 0){
-                p_dia = atoi(argv[4]);
-            }else{
-                printf("Erro!");
-            }
-        }else if(argc == 7){
-            if(strcmp("-d",argv[1]) == 0){
-                deslocamento = atoi(argv[2]);
-            }else if(strcmp("-o",argv[1]) == 0){
-                strcpy(arq, argv[2]);
-            }else if(strcmp("-p",argv[1]) == 0){
-                p_dia = atoi(argv[2]);
-            }else if(strcmp("-d",argv[3]) == 0){
-                deslocamento = atoi(argv[4]);
-            }else if(strcmp("-o",argv[3]) == 0){
-                strcpy(arq, argv[4]);
-            }else if(strcmp("-p",argv[3]) == 0){
-                p_dia = atoi(argv[4]);
-            }else if(strcmp("-d",argv[5]) == 0){
-                deslocamento = atoi(argv[6]);
-            }else if(strcmp("-o",argv[5]) == 0){
-                strcpy(arq, argv[6]);
-            }else if(strcmp("-p",argv[5]) == 0){
-                p_dia = atoi(argv[6]);
-            }else{
-                printf("Erro!");
-            }
+        }else{
+            // Quando a quantidade de argumentos é insuficiente
+            printf("Argumentos faltando!\n");
+            exit(0);
         }
-    }else{
-        printf("Argumentos faltando!\n");
-        exit(0);
     }
+        
 
     // Inicia o processamento da imagem
-    init_prog(MAX, deslocamento, arq, p_dia);
+    init_prog(MAX, deslocamento, file_name, p_dia);
     
     // Mensagem de término do programa
     printf("Programa Finalizado!!\n");
