@@ -1,0 +1,209 @@
+\hypertarget{headers_8h}{}\section{Referência do Arquivo libs/headers.h}
+\label{headers_8h}\index{libs/headers.\+h@{libs/headers.\+h}}
+
+
+Arquivo com os cabeçalhos das funções.  
+
+
+Este grafo mostra quais arquivos estão direta ou indiretamente relacionados com este arquivo\+:
+% FIG 0
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{headers_8h_a83ef745c40368e15639061169539001a}{num\+\_\+rand} (int)
+\begin{DoxyCompactList}\small\item\em Função para gerar número aleatório. \end{DoxyCompactList}\item 
+void \hyperlink{headers_8h_aa9df67ce01d831781519d8a04d7f4977}{init\+\_\+prog} (int \hyperlink{global_8h_a36ecf0006f5fe9d8bf1f2c1f2f2b4554}{M\+AX}, int \hyperlink{global_8h_a0acbecc7c5e2628e1ade43f5f3873409}{deslocamento}, char arq\mbox{[}$\,$\mbox{]}, int p\+\_\+dia)
+\begin{DoxyCompactList}\small\item\em Função que inicializa o programa. \end{DoxyCompactList}\item 
+void \hyperlink{headers_8h_a460e01770e6886e6be83e24de2e902e2}{salvar\+\_\+img} (int \hyperlink{global_8h_a36ecf0006f5fe9d8bf1f2c1f2f2b4554}{M\+AX}, \hyperlink{structpixel}{pixel} matriz\mbox{[}\hyperlink{global_8h_a36ecf0006f5fe9d8bf1f2c1f2f2b4554}{M\+AX}\mbox{]}\mbox{[}\hyperlink{global_8h_a36ecf0006f5fe9d8bf1f2c1f2f2b4554}{M\+AX}\mbox{]}, char file\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Função para salvar a matriz de pixels em um arquivo. \end{DoxyCompactList}\item 
+void \hyperlink{headers_8h_aaae76e1820dd9f97aef602bff7eb04b2}{init\+\_\+matriz} (int \hyperlink{global_8h_a36ecf0006f5fe9d8bf1f2c1f2f2b4554}{M\+AX}, \hyperlink{structpixel}{pixel} matriz\mbox{[}\hyperlink{global_8h_a36ecf0006f5fe9d8bf1f2c1f2f2b4554}{M\+AX}\mbox{]}\mbox{[}\hyperlink{global_8h_a36ecf0006f5fe9d8bf1f2c1f2f2b4554}{M\+AX}\mbox{]}, int p\+\_\+dia)
+\begin{DoxyCompactList}\small\item\em Função que inicializa a matriz com algumas cores. \end{DoxyCompactList}\item 
+void \hyperlink{headers_8h_aa8e03ce4a7359f395f5b9af7f5f212f6}{mid\+Point} (int \hyperlink{global_8h_a36ecf0006f5fe9d8bf1f2c1f2f2b4554}{M\+AX}, int montanha\mbox{[}\hyperlink{global_8h_a36ecf0006f5fe9d8bf1f2c1f2f2b4554}{M\+AX}\mbox{]}, \hyperlink{structpixel}{pixel} matriz\mbox{[}\hyperlink{global_8h_a36ecf0006f5fe9d8bf1f2c1f2f2b4554}{M\+AX}\mbox{]}\mbox{[}\hyperlink{global_8h_a36ecf0006f5fe9d8bf1f2c1f2f2b4554}{M\+AX}\mbox{]}, int tipo, int p\+\_\+dia, int \hyperlink{global_8h_a0acbecc7c5e2628e1ade43f5f3873409}{deslocamento}, int inicial, int final)
+\begin{DoxyCompactList}\small\item\em Função que gera os pontos médios do terreno. \end{DoxyCompactList}\item 
+void \hyperlink{headers_8h_a62960c902a4b0bb8a8eba96a3fa79810}{gen\+\_\+linhacontorno} (int \hyperlink{global_8h_a36ecf0006f5fe9d8bf1f2c1f2f2b4554}{M\+AX}, int \hyperlink{global_8h_a0acbecc7c5e2628e1ade43f5f3873409}{deslocamento}, int tipo, int p\+\_\+dia, int montanha\mbox{[}\hyperlink{global_8h_a36ecf0006f5fe9d8bf1f2c1f2f2b4554}{M\+AX}\mbox{]}, \hyperlink{structpixel}{pixel} matriz\mbox{[}\hyperlink{global_8h_a36ecf0006f5fe9d8bf1f2c1f2f2b4554}{M\+AX}\mbox{]}\mbox{[}\hyperlink{global_8h_a36ecf0006f5fe9d8bf1f2c1f2f2b4554}{M\+AX}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Função que gera os pontos extremos do terreno. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição Detalhada}
+Arquivo com os cabeçalhos das funções. 
+
+Arquivo com os cabeçalhos de cada função afim de evitar erros de declaração implicita 
+
+\subsection{Funções}
+\index{headers.\+h@{headers.\+h}!gen\+\_\+linhacontorno@{gen\+\_\+linhacontorno}}
+\index{gen\+\_\+linhacontorno@{gen\+\_\+linhacontorno}!headers.\+h@{headers.\+h}}
+\subsubsection[{\texorpdfstring{gen\+\_\+linhacontorno(int M\+A\+X, int deslocamento, int tipo, int p\+\_\+dia, int montanha[M\+AX], pixel matriz[M\+AX][M\+AX])}{gen_linhacontorno(int MAX, int deslocamento, int tipo, int p_dia, int montanha[MAX], pixel matriz[MAX][MAX])}}]{\setlength{\rightskip}{0pt plus 5cm}void gen\+\_\+linhacontorno (
+\begin{DoxyParamCaption}
+\item[{int}]{M\+AX, }
+\item[{int}]{deslocamento, }
+\item[{int}]{tipo, }
+\item[{int}]{p\+\_\+dia, }
+\item[{int}]{montanha\mbox{[}\+M\+A\+X\mbox{]}, }
+\item[{{\bf pixel}}]{matriz\mbox{[}\+M\+A\+X\mbox{]}\mbox{[}\+M\+A\+X\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{headers_8h_a62960c902a4b0bb8a8eba96a3fa79810}{}\label{headers_8h_a62960c902a4b0bb8a8eba96a3fa79810}
+
+
+Função que gera os pontos extremos do terreno. 
+
+Função que inicializa os pontos extremos e chama a função Mid\+Point para gerar os valores médios
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em M\+AX} & Valor máximo da linha e coluna da matriz \\
+\hline
+{\em deslocamento} & fator de deslocamento \\
+\hline
+{\em tipo} & Variável que auxilia na geração de três montanhas \\
+\hline
+{\em p\+\_\+dia} & Variável para controlar se as cores da montanha serão noturnas ou diurnas  Vetor de altitudes que irá gerar a montanha \\
+\hline
+{\em matriz} & Matriz de pixels \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Nada 
+\end{DoxyReturn}
+\index{headers.\+h@{headers.\+h}!init\+\_\+matriz@{init\+\_\+matriz}}
+\index{init\+\_\+matriz@{init\+\_\+matriz}!headers.\+h@{headers.\+h}}
+\subsubsection[{\texorpdfstring{init\+\_\+matriz(int M\+A\+X, pixel matriz[M\+AX][M\+AX], int p\+\_\+dia)}{init_matriz(int MAX, pixel matriz[MAX][MAX], int p_dia)}}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+matriz (
+\begin{DoxyParamCaption}
+\item[{int}]{M\+AX, }
+\item[{{\bf pixel}}]{matriz\mbox{[}\+M\+A\+X\mbox{]}\mbox{[}\+M\+A\+X\mbox{]}, }
+\item[{int}]{p\+\_\+dia}
+\end{DoxyParamCaption}
+)}\hypertarget{headers_8h_aaae76e1820dd9f97aef602bff7eb04b2}{}\label{headers_8h_aaae76e1820dd9f97aef602bff7eb04b2}
+
+
+Função que inicializa a matriz com algumas cores. 
+
+Função que inicializa a matriz de pixels com cores diurnas ou noturnas
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em M\+AX} & Valor máximo da linha e coluna da matriz \\
+\hline
+{\em matriz} & Matriz de pixels \\
+\hline
+{\em p\+\_\+dia} & Variável para controlar se as cores da montanha serão noturnas ou diurnas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Nada 
+\end{DoxyReturn}
+\index{headers.\+h@{headers.\+h}!init\+\_\+prog@{init\+\_\+prog}}
+\index{init\+\_\+prog@{init\+\_\+prog}!headers.\+h@{headers.\+h}}
+\subsubsection[{\texorpdfstring{init\+\_\+prog(int M\+A\+X, int deslocamento, char arq[], int p\+\_\+dia)}{init_prog(int MAX, int deslocamento, char arq[], int p_dia)}}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+prog (
+\begin{DoxyParamCaption}
+\item[{int}]{M\+AX, }
+\item[{int}]{deslocamento, }
+\item[{char}]{arq\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{p\+\_\+dia}
+\end{DoxyParamCaption}
+)}\hypertarget{headers_8h_aa9df67ce01d831781519d8a04d7f4977}{}\label{headers_8h_aa9df67ce01d831781519d8a04d7f4977}
+
+
+Função que inicializa o programa. 
+
+Função para inicializar as matrizes e vetores do programa
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em M\+AX} & Valor máximo da linha e coluna da matriz \\
+\hline
+{\em deslocamento} & valor da variação da montanha \\
+\hline
+{\em arq} & Nome que será dado ao arquivo \\
+\hline
+{\em p\+\_\+dia} & Período do dia a imagem será gerada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Nada 
+\end{DoxyReturn}
+\index{headers.\+h@{headers.\+h}!mid\+Point@{mid\+Point}}
+\index{mid\+Point@{mid\+Point}!headers.\+h@{headers.\+h}}
+\subsubsection[{\texorpdfstring{mid\+Point(int M\+A\+X, int montanha[M\+AX], pixel matriz[M\+AX][M\+AX], int tipo, int p\+\_\+dia, int deslocamento, int inicial, int final)}{midPoint(int MAX, int montanha[MAX], pixel matriz[MAX][MAX], int tipo, int p_dia, int deslocamento, int inicial, int final)}}]{\setlength{\rightskip}{0pt plus 5cm}void mid\+Point (
+\begin{DoxyParamCaption}
+\item[{int}]{M\+AX, }
+\item[{int}]{montanha\mbox{[}\+M\+A\+X\mbox{]}, }
+\item[{{\bf pixel}}]{matriz\mbox{[}\+M\+A\+X\mbox{]}\mbox{[}\+M\+A\+X\mbox{]}, }
+\item[{int}]{tipo, }
+\item[{int}]{p\+\_\+dia, }
+\item[{int}]{deslocamento, }
+\item[{int}]{inicial, }
+\item[{int}]{final}
+\end{DoxyParamCaption}
+)}\hypertarget{headers_8h_aa8e03ce4a7359f395f5b9af7f5f212f6}{}\label{headers_8h_aa8e03ce4a7359f395f5b9af7f5f212f6}
+
+
+Função que gera os pontos médios do terreno. 
+
+Função que gera os pontos médios do terreno a partir dos pontos extremos e atribui algumas cores aos pixeis
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em M\+AX} & Valor máximo da linha e coluna da matriz  Vetor de altitudes que irá gerar a montanha \\
+\hline
+{\em matriz} & Matriz de pixels \\
+\hline
+{\em tipo} & Variável que auxilia na geração de três montanhas \\
+\hline
+{\em p\+\_\+dia} & Variável para controlar se as cores da montanha serão noturnas ou diurnas \\
+\hline
+{\em deslocamento} & fator de deslocamento \\
+\hline
+{\em arq} & Nome que será dado ao arquivo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Nada 
+\end{DoxyReturn}
+\index{headers.\+h@{headers.\+h}!num\+\_\+rand@{num\+\_\+rand}}
+\index{num\+\_\+rand@{num\+\_\+rand}!headers.\+h@{headers.\+h}}
+\subsubsection[{\texorpdfstring{num\+\_\+rand(int)}{num_rand(int)}}]{\setlength{\rightskip}{0pt plus 5cm}int num\+\_\+rand (
+\begin{DoxyParamCaption}
+\item[{int}]{max}
+\end{DoxyParamCaption}
+)}\hypertarget{headers_8h_a83ef745c40368e15639061169539001a}{}\label{headers_8h_a83ef745c40368e15639061169539001a}
+
+
+Função para gerar número aleatório. 
+
+Função que gera um número entre 0 e max
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em max} & Valor máximo que o número aleatório poderá atingir \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+númeo aleatorio 
+\end{DoxyReturn}
+\index{headers.\+h@{headers.\+h}!salvar\+\_\+img@{salvar\+\_\+img}}
+\index{salvar\+\_\+img@{salvar\+\_\+img}!headers.\+h@{headers.\+h}}
+\subsubsection[{\texorpdfstring{salvar\+\_\+img(int M\+A\+X, pixel matriz[M\+AX][M\+AX], char file[])}{salvar_img(int MAX, pixel matriz[MAX][MAX], char file[])}}]{\setlength{\rightskip}{0pt plus 5cm}void salvar\+\_\+img (
+\begin{DoxyParamCaption}
+\item[{int}]{M\+AX, }
+\item[{{\bf pixel}}]{matriz\mbox{[}\+M\+A\+X\mbox{]}\mbox{[}\+M\+A\+X\mbox{]}, }
+\item[{char}]{arq\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{headers_8h_a460e01770e6886e6be83e24de2e902e2}{}\label{headers_8h_a460e01770e6886e6be83e24de2e902e2}
+
+
+Função para salvar a matriz de pixels em um arquivo. 
+
+Função que salva a matriz de pixels em um arquivo .ppm
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em M\+AX} & Valor máximo da linha e coluna da matriz \\
+\hline
+{\em matriz} & Matriz a ser salva no arquivo \\
+\hline
+{\em arq} & Nome que será dado ao arquivo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Nada 
+\end{DoxyReturn}

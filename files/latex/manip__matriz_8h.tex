@@ -1,0 +1,125 @@
+\hypertarget{manip__matriz_8h}{}\section{Referência do Arquivo libs/manip\+\_\+matriz.h}
+\label{manip__matriz_8h}\index{libs/manip\+\_\+matriz.\+h@{libs/manip\+\_\+matriz.\+h}}
+
+
+Arquivo com as funções para gerar o terreno.  
+
+
+Este grafo mostra quais arquivos estão direta ou indiretamente relacionados com este arquivo\+:
+% FIG 0
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{manip__matriz_8h_aa8e03ce4a7359f395f5b9af7f5f212f6}{mid\+Point} (int \hyperlink{global_8h_a36ecf0006f5fe9d8bf1f2c1f2f2b4554}{M\+AX}, int montanha\mbox{[}\hyperlink{global_8h_a36ecf0006f5fe9d8bf1f2c1f2f2b4554}{M\+AX}\mbox{]}, \hyperlink{structpixel}{pixel} matriz\mbox{[}\hyperlink{global_8h_a36ecf0006f5fe9d8bf1f2c1f2f2b4554}{M\+AX}\mbox{]}\mbox{[}\hyperlink{global_8h_a36ecf0006f5fe9d8bf1f2c1f2f2b4554}{M\+AX}\mbox{]}, int tipo, int p\+\_\+dia, int \hyperlink{global_8h_a0acbecc7c5e2628e1ade43f5f3873409}{deslocamento}, int inicial, int final)
+\begin{DoxyCompactList}\small\item\em Função que gera os pontos médios do terreno. \end{DoxyCompactList}\item 
+void \hyperlink{manip__matriz_8h_a62960c902a4b0bb8a8eba96a3fa79810}{gen\+\_\+linhacontorno} (int \hyperlink{global_8h_a36ecf0006f5fe9d8bf1f2c1f2f2b4554}{M\+AX}, int \hyperlink{global_8h_a0acbecc7c5e2628e1ade43f5f3873409}{deslocamento}, int tipo, int p\+\_\+dia, int montanha\mbox{[}\hyperlink{global_8h_a36ecf0006f5fe9d8bf1f2c1f2f2b4554}{M\+AX}\mbox{]}, \hyperlink{structpixel}{pixel} matriz\mbox{[}\hyperlink{global_8h_a36ecf0006f5fe9d8bf1f2c1f2f2b4554}{M\+AX}\mbox{]}\mbox{[}\hyperlink{global_8h_a36ecf0006f5fe9d8bf1f2c1f2f2b4554}{M\+AX}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Função que gera os pontos extremos do terreno. \end{DoxyCompactList}\item 
+void \hyperlink{manip__matriz_8h_aaae76e1820dd9f97aef602bff7eb04b2}{init\+\_\+matriz} (int \hyperlink{global_8h_a36ecf0006f5fe9d8bf1f2c1f2f2b4554}{M\+AX}, \hyperlink{structpixel}{pixel} matriz\mbox{[}\hyperlink{global_8h_a36ecf0006f5fe9d8bf1f2c1f2f2b4554}{M\+AX}\mbox{]}\mbox{[}\hyperlink{global_8h_a36ecf0006f5fe9d8bf1f2c1f2f2b4554}{M\+AX}\mbox{]}, int p\+\_\+dia)
+\begin{DoxyCompactList}\small\item\em Função que inicializa a matriz com algumas cores. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição Detalhada}
+Arquivo com as funções para gerar o terreno. 
+
+
+
+\subsection{Funções}
+\index{manip\+\_\+matriz.\+h@{manip\+\_\+matriz.\+h}!gen\+\_\+linhacontorno@{gen\+\_\+linhacontorno}}
+\index{gen\+\_\+linhacontorno@{gen\+\_\+linhacontorno}!manip\+\_\+matriz.\+h@{manip\+\_\+matriz.\+h}}
+\subsubsection[{\texorpdfstring{gen\+\_\+linhacontorno(int M\+A\+X, int deslocamento, int tipo, int p\+\_\+dia, int montanha[M\+AX], pixel matriz[M\+AX][M\+AX])}{gen_linhacontorno(int MAX, int deslocamento, int tipo, int p_dia, int montanha[MAX], pixel matriz[MAX][MAX])}}]{\setlength{\rightskip}{0pt plus 5cm}void gen\+\_\+linhacontorno (
+\begin{DoxyParamCaption}
+\item[{int}]{M\+AX, }
+\item[{int}]{deslocamento, }
+\item[{int}]{tipo, }
+\item[{int}]{p\+\_\+dia, }
+\item[{int}]{montanha\mbox{[}\+M\+A\+X\mbox{]}, }
+\item[{{\bf pixel}}]{matriz\mbox{[}\+M\+A\+X\mbox{]}\mbox{[}\+M\+A\+X\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{manip__matriz_8h_a62960c902a4b0bb8a8eba96a3fa79810}{}\label{manip__matriz_8h_a62960c902a4b0bb8a8eba96a3fa79810}
+
+
+Função que gera os pontos extremos do terreno. 
+
+Função que inicializa os pontos extremos e chama a função Mid\+Point para gerar os valores médios
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em M\+AX} & Valor máximo da linha e coluna da matriz \\
+\hline
+{\em deslocamento} & fator de deslocamento \\
+\hline
+{\em tipo} & Variável que auxilia na geração de três montanhas \\
+\hline
+{\em p\+\_\+dia} & Variável para controlar se as cores da montanha serão noturnas ou diurnas  Vetor de altitudes que irá gerar a montanha \\
+\hline
+{\em matriz} & Matriz de pixels \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Nada 
+\end{DoxyReturn}
+\index{manip\+\_\+matriz.\+h@{manip\+\_\+matriz.\+h}!init\+\_\+matriz@{init\+\_\+matriz}}
+\index{init\+\_\+matriz@{init\+\_\+matriz}!manip\+\_\+matriz.\+h@{manip\+\_\+matriz.\+h}}
+\subsubsection[{\texorpdfstring{init\+\_\+matriz(int M\+A\+X, pixel matriz[M\+AX][M\+AX], int p\+\_\+dia)}{init_matriz(int MAX, pixel matriz[MAX][MAX], int p_dia)}}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+matriz (
+\begin{DoxyParamCaption}
+\item[{int}]{M\+AX, }
+\item[{{\bf pixel}}]{matriz\mbox{[}\+M\+A\+X\mbox{]}\mbox{[}\+M\+A\+X\mbox{]}, }
+\item[{int}]{p\+\_\+dia}
+\end{DoxyParamCaption}
+)}\hypertarget{manip__matriz_8h_aaae76e1820dd9f97aef602bff7eb04b2}{}\label{manip__matriz_8h_aaae76e1820dd9f97aef602bff7eb04b2}
+
+
+Função que inicializa a matriz com algumas cores. 
+
+Função que inicializa a matriz de pixels com cores diurnas ou noturnas
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em M\+AX} & Valor máximo da linha e coluna da matriz \\
+\hline
+{\em matriz} & Matriz de pixels \\
+\hline
+{\em p\+\_\+dia} & Variável para controlar se as cores da montanha serão noturnas ou diurnas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Nada 
+\end{DoxyReturn}
+\index{manip\+\_\+matriz.\+h@{manip\+\_\+matriz.\+h}!mid\+Point@{mid\+Point}}
+\index{mid\+Point@{mid\+Point}!manip\+\_\+matriz.\+h@{manip\+\_\+matriz.\+h}}
+\subsubsection[{\texorpdfstring{mid\+Point(int M\+A\+X, int montanha[M\+AX], pixel matriz[M\+AX][M\+AX], int tipo, int p\+\_\+dia, int deslocamento, int inicial, int final)}{midPoint(int MAX, int montanha[MAX], pixel matriz[MAX][MAX], int tipo, int p_dia, int deslocamento, int inicial, int final)}}]{\setlength{\rightskip}{0pt plus 5cm}void mid\+Point (
+\begin{DoxyParamCaption}
+\item[{int}]{M\+AX, }
+\item[{int}]{montanha\mbox{[}\+M\+A\+X\mbox{]}, }
+\item[{{\bf pixel}}]{matriz\mbox{[}\+M\+A\+X\mbox{]}\mbox{[}\+M\+A\+X\mbox{]}, }
+\item[{int}]{tipo, }
+\item[{int}]{p\+\_\+dia, }
+\item[{int}]{deslocamento, }
+\item[{int}]{inicial, }
+\item[{int}]{final}
+\end{DoxyParamCaption}
+)}\hypertarget{manip__matriz_8h_aa8e03ce4a7359f395f5b9af7f5f212f6}{}\label{manip__matriz_8h_aa8e03ce4a7359f395f5b9af7f5f212f6}
+
+
+Função que gera os pontos médios do terreno. 
+
+Função que gera os pontos médios do terreno a partir dos pontos extremos e atribui algumas cores aos pixeis
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em M\+AX} & Valor máximo da linha e coluna da matriz  Vetor de altitudes que irá gerar a montanha \\
+\hline
+{\em matriz} & Matriz de pixels \\
+\hline
+{\em tipo} & Variável que auxilia na geração de três montanhas \\
+\hline
+{\em p\+\_\+dia} & Variável para controlar se as cores da montanha serão noturnas ou diurnas \\
+\hline
+{\em deslocamento} & fator de deslocamento \\
+\hline
+{\em arq} & Nome que será dado ao arquivo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Nada 
+\end{DoxyReturn}

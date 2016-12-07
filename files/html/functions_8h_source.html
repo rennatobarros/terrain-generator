@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Projeto de PTP: Código-Fonte de libs/functions.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Projeto de PTP
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Gerador de terrenos aleatórios em C</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;Principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&#160;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Estruturas&#160;de&#160;Dados</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Busca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;Arquivos</span></a></li>
+      <li><a href="globals.html"><span>Globais</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_6719ab1f1f7655efc2fa43f7eb574fd1.html">libs</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">functions.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="functions_8h.html">Vá para a documentação deste arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="global_8h.html">global.h</a>&quot;</span>         </div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="headers_8h.html">headers.h</a>&quot;</span>        </div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="manip__matriz_8h.html">manip_matriz.h</a>&quot;</span>   </div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="headers_8h.html#a83ef745c40368e15639061169539001a">   18</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="functions_8h.html#a8c7cc652928a9e1e44303e2c64de193a">num_rand</a> (<span class="keywordtype">int</span> max) </div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">return</span> rand()%max;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="headers_8h.html#a460e01770e6886e6be83e24de2e902e2">   33</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="functions_8h.html#aa7244fa7d9afc5bbec68b718a044be01">salvar_img</a>(<span class="keywordtype">int</span> <a class="code" href="global_8h.html#a36ecf0006f5fe9d8bf1f2c1f2f2b4554">MAX</a>, <a class="code" href="structpixel.html">pixel</a> matriz[MAX][MAX], <span class="keywordtype">char</span> arq[])</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// Define que cada pixel só poderá ir até 255</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="global_8h.html#a77bee9d4bcd711f32eaa36c0145e9104">v_max</a> = 255;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// Concatena o nome do arquivo com a extensão ppm</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="global_8h.html#a171a0a88629ac53aa8629ee2414070c1">imagem</a> = fopen(strcat(arq,<span class="stringliteral">&quot;.ppm&quot;</span>), <span class="stringliteral">&quot;w&quot;</span>);</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// Define o cabeçalho da imagem </span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    fprintf (<a class="code" href="global_8h.html#a171a0a88629ac53aa8629ee2414070c1">imagem</a>, <span class="stringliteral">&quot;%s\n&quot;</span>, <a class="code" href="global_8h.html#a383d5e14413e39bc8997c9f4edbe05d4">header</a>);</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// Define os valor de altura e largura da imagem</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    fprintf (<a class="code" href="global_8h.html#a171a0a88629ac53aa8629ee2414070c1">imagem</a>, <span class="stringliteral">&quot;%d %d\n&quot;</span>, MAX, MAX);</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// Define o valor máximo que cada pixel pode alcançar</span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    fprintf (<a class="code" href="global_8h.html#a171a0a88629ac53aa8629ee2414070c1">imagem</a>, <span class="stringliteral">&quot;%d\n&quot;</span>, <a class="code" href="global_8h.html#a77bee9d4bcd711f32eaa36c0145e9104">v_max</a>);</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="global_8h.html#acb559820d9ca11295b4500f179ef6392">i</a>=0; <a class="code" href="global_8h.html#acb559820d9ca11295b4500f179ef6392">i</a> &lt; <a class="code" href="global_8h.html#a36ecf0006f5fe9d8bf1f2c1f2f2b4554">MAX</a>; <a class="code" href="global_8h.html#acb559820d9ca11295b4500f179ef6392">i</a>++)</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">for</span> (j=0; j &lt; <a class="code" href="global_8h.html#a36ecf0006f5fe9d8bf1f2c1f2f2b4554">MAX</a>; j++)</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            fprintf(<a class="code" href="global_8h.html#a171a0a88629ac53aa8629ee2414070c1">imagem</a>, <span class="stringliteral">&quot;%d %d %d\n&quot;</span>, </div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="comment">//Operação ternária que verifica se o valor do pixel não ultrapassou os valores máximo e mínimo.</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            (matriz[<a class="code" href="global_8h.html#acb559820d9ca11295b4500f179ef6392">i</a>][j].r &gt; <a class="code" href="global_8h.html#a77bee9d4bcd711f32eaa36c0145e9104">v_max</a>) ? <a class="code" href="global_8h.html#a77bee9d4bcd711f32eaa36c0145e9104">v_max</a> : (matriz[<a class="code" href="global_8h.html#acb559820d9ca11295b4500f179ef6392">i</a>][j].r &lt; 0) ? 0 : matriz[<a class="code" href="global_8h.html#acb559820d9ca11295b4500f179ef6392">i</a>][j].r,</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            (matriz[<a class="code" href="global_8h.html#acb559820d9ca11295b4500f179ef6392">i</a>][j].g &gt; <a class="code" href="global_8h.html#a77bee9d4bcd711f32eaa36c0145e9104">v_max</a>) ? <a class="code" href="global_8h.html#a77bee9d4bcd711f32eaa36c0145e9104">v_max</a> : (matriz[<a class="code" href="global_8h.html#acb559820d9ca11295b4500f179ef6392">i</a>][j].g &lt; 0) ? 0 : matriz[<a class="code" href="global_8h.html#acb559820d9ca11295b4500f179ef6392">i</a>][j].g,</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            (matriz[<a class="code" href="global_8h.html#acb559820d9ca11295b4500f179ef6392">i</a>][j].b &gt; <a class="code" href="global_8h.html#a77bee9d4bcd711f32eaa36c0145e9104">v_max</a>) ? <a class="code" href="global_8h.html#a77bee9d4bcd711f32eaa36c0145e9104">v_max</a> : (matriz[<a class="code" href="global_8h.html#acb559820d9ca11295b4500f179ef6392">i</a>][j].b &lt; 0) ? 0 : matriz[<a class="code" href="global_8h.html#acb559820d9ca11295b4500f179ef6392">i</a>][j].b);</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    fclose(<a class="code" href="global_8h.html#a171a0a88629ac53aa8629ee2414070c1">imagem</a>);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div><div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="headers_8h.html#aa9df67ce01d831781519d8a04d7f4977">   69</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="functions_8h.html#aa9df67ce01d831781519d8a04d7f4977">init_prog</a>(<span class="keywordtype">int</span> <a class="code" href="global_8h.html#a36ecf0006f5fe9d8bf1f2c1f2f2b4554">MAX</a>, <span class="keywordtype">int</span> <a class="code" href="global_8h.html#a0acbecc7c5e2628e1ade43f5f3873409">deslocamento</a>, <span class="keywordtype">char</span> arq[], <span class="keywordtype">int</span> p_dia)</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// Inicia a matriz de pixels</span></div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="structpixel.html">pixel</a> matriz[<a class="code" href="global_8h.html#a36ecf0006f5fe9d8bf1f2c1f2f2b4554">MAX</a>][<a class="code" href="global_8h.html#a36ecf0006f5fe9d8bf1f2c1f2f2b4554">MAX</a>];</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// Inicia as três montanhas que aparecerão no terreno</span></div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">int</span> montanha[<a class="code" href="global_8h.html#a36ecf0006f5fe9d8bf1f2c1f2f2b4554">MAX</a>];</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">int</span> montanha2[<a class="code" href="global_8h.html#a36ecf0006f5fe9d8bf1f2c1f2f2b4554">MAX</a>];</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">int</span> montanha3[<a class="code" href="global_8h.html#a36ecf0006f5fe9d8bf1f2c1f2f2b4554">MAX</a>];</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    </div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="headers_8h.html#aaae76e1820dd9f97aef602bff7eb04b2">init_matriz</a>(MAX, matriz, p_dia);</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// Chama a função que gera a linha de contorno</span></div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="headers_8h.html#a62960c902a4b0bb8a8eba96a3fa79810">gen_linhacontorno</a>(MAX, deslocamento, 1, p_dia, montanha, matriz);</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="headers_8h.html#a62960c902a4b0bb8a8eba96a3fa79810">gen_linhacontorno</a>(MAX, deslocamento, 2, p_dia, montanha2, matriz);</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="headers_8h.html#a62960c902a4b0bb8a8eba96a3fa79810">gen_linhacontorno</a>(MAX, deslocamento, 3, p_dia, montanha3, matriz);</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    </div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// Salva a imagem em um arquivo</span></div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="functions_8h.html#aa7244fa7d9afc5bbec68b718a044be01">salvar_img</a>(MAX, matriz, arq);</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div><div class="ttc" id="global_8h_html_a36ecf0006f5fe9d8bf1f2c1f2f2b4554"><div class="ttname"><a href="global_8h.html#a36ecf0006f5fe9d8bf1f2c1f2f2b4554">MAX</a></div><div class="ttdeci">int MAX</div><div class="ttdef"><b>Definition:</b> global.h:25</div></div>
+<div class="ttc" id="headers_8h_html_a62960c902a4b0bb8a8eba96a3fa79810"><div class="ttname"><a href="headers_8h.html#a62960c902a4b0bb8a8eba96a3fa79810">gen_linhacontorno</a></div><div class="ttdeci">void gen_linhacontorno(int MAX, int deslocamento, int tipo, int p_dia, int montanha[MAX], pixel matriz[MAX][MAX])</div><div class="ttdoc">Função que gera os pontos extremos do terreno. </div><div class="ttdef"><b>Definition:</b> manip_matriz.h:111</div></div>
+<div class="ttc" id="manip__matriz_8h_html"><div class="ttname"><a href="manip__matriz_8h.html">manip_matriz.h</a></div><div class="ttdoc">Arquivo com as funções para gerar o terreno. </div></div>
+<div class="ttc" id="global_8h_html_a171a0a88629ac53aa8629ee2414070c1"><div class="ttname"><a href="global_8h.html#a171a0a88629ac53aa8629ee2414070c1">imagem</a></div><div class="ttdeci">FILE * imagem</div><div class="ttdef"><b>Definition:</b> global.h:16</div></div>
+<div class="ttc" id="global_8h_html"><div class="ttname"><a href="global_8h.html">global.h</a></div><div class="ttdoc">Arquivo com variáveis globais. </div></div>
+<div class="ttc" id="headers_8h_html"><div class="ttname"><a href="headers_8h.html">headers.h</a></div><div class="ttdoc">Arquivo com os cabeçalhos das funções. </div></div>
+<div class="ttc" id="functions_8h_html_aa7244fa7d9afc5bbec68b718a044be01"><div class="ttname"><a href="functions_8h.html#aa7244fa7d9afc5bbec68b718a044be01">salvar_img</a></div><div class="ttdeci">void salvar_img(int MAX, pixel matriz[MAX][MAX], char arq[])</div><div class="ttdoc">Função para salvar a matriz de pixels em um arquivo. </div><div class="ttdef"><b>Definition:</b> functions.h:33</div></div>
+<div class="ttc" id="global_8h_html_a77bee9d4bcd711f32eaa36c0145e9104"><div class="ttname"><a href="global_8h.html#a77bee9d4bcd711f32eaa36c0145e9104">v_max</a></div><div class="ttdeci">int v_max</div><div class="ttdef"><b>Definition:</b> global.h:31</div></div>
+<div class="ttc" id="functions_8h_html_a8c7cc652928a9e1e44303e2c64de193a"><div class="ttname"><a href="functions_8h.html#a8c7cc652928a9e1e44303e2c64de193a">num_rand</a></div><div class="ttdeci">int num_rand(int max)</div><div class="ttdoc">Função para gerar número aleatório. </div><div class="ttdef"><b>Definition:</b> functions.h:18</div></div>
+<div class="ttc" id="global_8h_html_acb559820d9ca11295b4500f179ef6392"><div class="ttname"><a href="global_8h.html#acb559820d9ca11295b4500f179ef6392">i</a></div><div class="ttdeci">int i</div><div class="ttdef"><b>Definition:</b> global.h:28</div></div>
+<div class="ttc" id="functions_8h_html_aa9df67ce01d831781519d8a04d7f4977"><div class="ttname"><a href="functions_8h.html#aa9df67ce01d831781519d8a04d7f4977">init_prog</a></div><div class="ttdeci">void init_prog(int MAX, int deslocamento, char arq[], int p_dia)</div><div class="ttdoc">Função que inicializa o programa. </div><div class="ttdef"><b>Definition:</b> functions.h:69</div></div>
+<div class="ttc" id="headers_8h_html_aaae76e1820dd9f97aef602bff7eb04b2"><div class="ttname"><a href="headers_8h.html#aaae76e1820dd9f97aef602bff7eb04b2">init_matriz</a></div><div class="ttdeci">void init_matriz(int MAX, pixel matriz[MAX][MAX], int p_dia)</div><div class="ttdoc">Função que inicializa a matriz com algumas cores. </div><div class="ttdef"><b>Definition:</b> manip_matriz.h:145</div></div>
+<div class="ttc" id="global_8h_html_a383d5e14413e39bc8997c9f4edbe05d4"><div class="ttname"><a href="global_8h.html#a383d5e14413e39bc8997c9f4edbe05d4">header</a></div><div class="ttdeci">#define header</div><div class="ttdef"><b>Definition:</b> global.h:13</div></div>
+<div class="ttc" id="structpixel_html"><div class="ttname"><a href="structpixel.html">pixel</a></div><div class="ttdef"><b>Definition:</b> global.h:36</div></div>
+<div class="ttc" id="global_8h_html_a0acbecc7c5e2628e1ade43f5f3873409"><div class="ttname"><a href="global_8h.html#a0acbecc7c5e2628e1ade43f5f3873409">deslocamento</a></div><div class="ttdeci">int deslocamento</div><div class="ttdef"><b>Definition:</b> global.h:19</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>
