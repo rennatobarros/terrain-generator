@@ -1,5 +1,5 @@
-#include "headers.h"
 #include "global.h"
+#include "headers.h"
 #include "manip_matriz.h"
 
 int num_rand (int max) 
